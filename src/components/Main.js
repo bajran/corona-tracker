@@ -13,29 +13,29 @@ const Main = () => {
 
     // const [countries, setCountries] = useState([])
     useEffect(() => {
-        // getApiCall("summary")
-        //  .then(populationData => {
-        //     console.log(populationData);
-        //     const { Global = {}, Countries = [], Date } = populationData;
-        //     let countries = Countries.sort((a, b) => b.TotalConfirmed - a.TotalConfirmed )
-        //         let global = Global       
-        //     dispatch({type: ALL_COUNTRIES, payload: countries});
-        //        dispatch({type: GLOBALLY_AFFECTED, payload: global})
-        //     dispatch({type: WROST_COUNTRIES, payload: countries.slice(0, 20)}) 
-        //   })
-        //   .catch(() =>
-        //     console.log("Something is not working, Please retry after some time")
-        //   );
+        getApiCall("summary")
+         .then(populationData => {
+            console.log(populationData);
+            const { Global = {}, Countries = [], Date } = populationData;
+            let countries = Countries.sort((a, b) => b.TotalConfirmed - a.TotalConfirmed )
+                let global = Global       
+            dispatch({type: ALL_COUNTRIES, payload: countries});
+               dispatch({type: GLOBALLY_AFFECTED, payload: global})
+            dispatch({type: WROST_COUNTRIES, payload: countries.slice(0, 20)}) 
+          })
+          .catch(() =>
+            console.log("Something is not working, Please retry after some time")
+          );
         
         // Fake Data - TO Reduce API Call
-        let {Countries} = Country;
-        let {Global} = GlobalData;
-        let global = Global
-        let countries = Countries.sort((a, b) => b.TotalConfirmed - a.TotalConfirmed )  
-        // setCountries(countries) 
-        dispatch({type: ALL_COUNTRIES, payload: countries});
-        dispatch({type: WROST_COUNTRIES, payload: countries.slice(0, 20)});
-        dispatch({type: GLOBALLY_AFFECTED, payload: global}); 
+        // let {Countries} = Country;
+        // let {Global} = GlobalData;
+        // let global = Global
+        // let countries = Countries.sort((a, b) => b.TotalConfirmed - a.TotalConfirmed )  
+        // // setCountries(countries) 
+        // dispatch({type: ALL_COUNTRIES, payload: countries});
+        // dispatch({type: WROST_COUNTRIES, payload: countries.slice(0, 20)});
+        // dispatch({type: GLOBALLY_AFFECTED, payload: global}); 
 
       },[dispatch]);
 
