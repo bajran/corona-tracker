@@ -1,12 +1,14 @@
-import React from "react";
+import React,{useEffect, useState} from "react";
 import GlobalResult from "./globalResult";
 import {useStateContext} from '../covid-provider'
 
 
 const TopAffectedCountires = () => {
     const {highlyAffectedCountries} = useStateContext();
+ 
+    
     return (
-        <main role="main" className="col-md-9 ml-sm-auto col-lg-9">
+        <main role="main" className={`ml-sm-auto ${ window.screen.width <= 768 ? 'col-md-12' : 'col-md-9' }`}>
             <GlobalResult/>
             <h5 className="top-country-list">Highly Affected Countries</h5>
             <div className="row highly-affected">

@@ -1,9 +1,10 @@
-import {ALL_COUNTRIES, WROST_COUNTRIES, GLOBALLY_AFFECTED} from './actionTypes'
+import {ALL_COUNTRIES, WROST_COUNTRIES, GLOBALLY_AFFECTED, SIDEBAR} from './actionTypes'
 
 export const initialState = {
     global: {},
     countries: [],
-    highlyAffectedCountries: []
+    highlyAffectedCountries: [],
+    showSidebar: false
 };
 
 export const reducer = (state, action) => {
@@ -17,6 +18,9 @@ export const reducer = (state, action) => {
         
         case GLOBALLY_AFFECTED:
             return {...state, global: payload}
+        
+        case SIDEBAR:
+            return {...state, showSidebar: payload}
 
         default:
             return state

@@ -1,3 +1,4 @@
 export const ALL_COUNTRIES = 'ALL_COUNTRIES'; 
 export const WROST_COUNTRIES= 'WROST_COUNTRIES';
 export const GLOBALLY_AFFECTED = 'GLOBALLY_AFFECTED';
+export const SIDEBAR = 'SIDEBAR';

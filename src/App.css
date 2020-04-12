@@ -1,3 +1,7 @@
+[role=main]{
+  padding-top: 78px !important;
+}
+
 .cp{
   cursor: pointer;
 }
@@ -89,4 +93,41 @@
 .total-confirmed{
   font-weight: 900;
   color: lightblue;
+}
+
+.navbar-toggler{
+  position: absolute;
+  top: 0;
+  left: 0;
+  outline: none;
+  z-index: 1;
+  height: 100%;
+  border: 0
+}
+
+.navbar-toggler:focus{
+  border: 0;
+  outline: none;
+}
+
+.full-width-sidebar{
+  width: 100%;  
+  
+}
+
+
+
+/* Responsive Designing */
+
+@media (max-width: 768px) {
+  .show-sidebar{
+    display: none;
+  }
+
+}
+
+@media (min-width: 769px){
+  .navbar-toggler{
+    display: none;
+  }
 }
