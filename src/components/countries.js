@@ -1,13 +1,12 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import {useStateContext, useDispatchContext} from '../covid-provider'
 
 const Countries = () =>{ 
-    let {countries, showSidebar} = useStateContext();
-    
-    const [allCountry, setAllCountry] = useState([])
-    const [searchText, setSearchText] = useState('');
+    let {countries, showSidebar} = useStateContext();    
+    const [allCountry, setAllCountry] = useState([]);
     const [showSearch, setShowSearch] = useState(true);
-    console.log(showSidebar)
+    const textInput = useRef(null);
+    
 
     useEffect(() => {
         setAllCountry(countries);
@@ -15,16 +14,16 @@ const Countries = () =>{
 
 
     const search = () => {
-        if(searchText){
+        let value = textInput.current.value
+        if(value){
             setShowSearch(false);             
-            setAllCountry(countries.filter(country => country.Country.toLowerCase() === searchText.toLowerCase()));
+            setAllCountry(countries.filter(country => country.Country.toLowerCase() === value.toLowerCase()));
         }       
     }
 
     const clear = () => {    
         setAllCountry(countries)   
         setShowSearch(true);
-        setSearchText('');
     }
 
     const LoadComponent = () => {
@@ -34,10 +33,10 @@ const Countries = () =>{
                     <input type="text" 
                         className="form-control" 
                         placeholder="Search By Country Name"
-                        value= {searchText}
-                        onChange={(e) => setSearchText(e.target.value)} 
+                        ref={textInput}
                         aria-label="Username" 
-                        aria-describedby="basic-addon1"/>
+                        aria-describedby="basic-addon1"
+                        />
                     <div className="input-group-prepend">
                         {
                             showSearch ? <span className="input-group-text cp" onClick={search} id="basic-addon1">Search</span>

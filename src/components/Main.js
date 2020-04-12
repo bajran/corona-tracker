@@ -27,7 +27,7 @@ const Main = () => {
             console.log("Something is not working, Please retry after some time")
           );
         
-        // Fake Data - TO Reduce API Call
+        // // Fake Data - TO Reduce API Call
         // let {Countries} = Country;
         // let {Global} = GlobalData;
         // let global = Global
