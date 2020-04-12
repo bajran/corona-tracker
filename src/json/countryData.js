@@ -1,0 +1,183 @@
+export default {
+  Countries: [
+    {
+      Country: "United States of America",
+      CountryCode: "US",
+      Slug: "united-states",
+      NewConfirmed: 35098,
+      TotalConfirmed: 4562222,
+      NewDeaths: 2104,
+      TotalDeaths: 18581,
+      NewRecovered: 3380,
+      TotalRecovered: 28790,
+      Date: "2020-04-11T11:31:32Z"
+    },
+    {
+        Country: "United States of America",
+        CountryCode: "US",
+        Slug: "united-states",
+        NewConfirmed: 35098,
+        TotalConfirmed: 5742333,
+        NewDeaths: 2104,
+        TotalDeaths: 18581,
+        NewRecovered: 3380,
+        TotalRecovered: 28790,
+        Date: "2020-04-11T11:31:32Z"
+      },
+      {
+        Country: "United States of America",
+        CountryCode: "US",
+        Slug: "united-states",
+        NewConfirmed: 35098,
+        TotalConfirmed: 496530,
+        NewDeaths: 2104,
+        TotalDeaths: 18581,
+        NewRecovered: 3380,
+        TotalRecovered: 28790,
+        Date: "2020-04-11T11:31:32Z"
+      },
+      {
+        Country: "United States of America",
+        CountryCode: "US",
+        Slug: "united-states",
+        NewConfirmed: 35098,
+        TotalConfirmed: 4965307,
+        NewDeaths: 2104,
+        TotalDeaths: 18581,
+        NewRecovered: 3380,
+        TotalRecovered: 28790,
+        Date: "2020-04-11T11:31:32Z"
+      },
+      {
+        Country: "United States of America",
+        CountryCode: "US",
+        Slug: "united-states",
+        NewConfirmed: 35098,
+        TotalConfirmed: 4916530,
+        NewDeaths: 2104,
+        TotalDeaths: 18581,
+        NewRecovered: 3380,
+        TotalRecovered: 28790,
+        Date: "2020-04-11T11:31:32Z"
+      },
+      {
+        Country: "United States of America",
+        CountryCode: "US",
+        Slug: "united-states",
+        NewConfirmed: 35098,
+        TotalConfirmed: 4962530,
+        NewDeaths: 2104,
+        TotalDeaths: 18581,
+        NewRecovered: 3380,
+        TotalRecovered: 28790,
+        Date: "2020-04-11T11:31:32Z"
+      }, {
+        Country: "United States of America",
+        CountryCode: "US",
+        Slug: "united-states",
+        NewConfirmed: 35098,
+        TotalConfirmed: 4965430,
+        NewDeaths: 2104,
+        TotalDeaths: 18581,
+        NewRecovered: 3380,
+        TotalRecovered: 28790,
+        Date: "2020-04-11T11:31:32Z"
+      },
+      {
+        Country: "United States of America",
+        CountryCode: "US",
+        Slug: "united-states",
+        NewConfirmed: 35098,
+        TotalConfirmed: 49653770,
+        NewDeaths: 2104,
+        TotalDeaths: 18581,
+        NewRecovered: 3380,
+        TotalRecovered: 28790,
+        Date: "2020-04-11T11:31:32Z"
+      },
+      {
+        Country: "United States of America",
+        CountryCode: "US",
+        Slug: "united-states",
+        NewConfirmed: 35098,
+        TotalConfirmed: 4965308,
+        NewDeaths: 2104,
+        TotalDeaths: 18581,
+        NewRecovered: 3380,
+        TotalRecovered: 28790,
+        Date: "2020-04-11T11:31:32Z"
+      },
+      {
+        Country: "United States of America",
+        CountryCode: "US",
+        Slug: "united-states",
+        NewConfirmed: 35098,
+        TotalConfirmed: 49653690,
+        NewDeaths: 2104,
+        TotalDeaths: 18581,
+        NewRecovered: 3380,
+        TotalRecovered: 28790,
+        Date: "2020-04-11T11:31:32Z"
+      },
+      {
+        Country: "United States of America",
+        CountryCode: "US",
+        Slug: "united-states",
+        NewConfirmed: 35098,
+        TotalConfirmed: 496530970,
+        NewDeaths: 2104,
+        TotalDeaths: 18581,
+        NewRecovered: 3380,
+        TotalRecovered: 28790,
+        Date: "2020-04-11T11:31:32Z"
+      },
+      {
+        Country: "United States of America",
+        CountryCode: "US",
+        Slug: "united-states",
+        NewConfirmed: 35098,
+        TotalConfirmed: 496530678,
+        NewDeaths: 2104,
+        TotalDeaths: 18581,
+        NewRecovered: 3380,
+        TotalRecovered: 28790,
+        Date: "2020-04-11T11:31:32Z"
+      },
+      {
+        Country: "United States of America",
+        CountryCode: "US",
+        Slug: "united-states",
+        NewConfirmed: 35098,
+        TotalConfirmed: 497866530,
+        NewDeaths: 2104,
+        TotalDeaths: 18581,
+        NewRecovered: 3380,
+        TotalRecovered: 28790,
+        Date: "2020-04-11T11:31:32Z"
+      },
+      {
+        Country: "United States of America",
+        CountryCode: "US",
+        Slug: "united-states",
+        NewConfirmed: 35098,
+        TotalConfirmed: 4965388880,
+        NewDeaths: 2104,
+        TotalDeaths: 18581,
+        NewRecovered: 3380,
+        TotalRecovered: 28790,
+        Date: "2020-04-11T11:31:32Z"
+      },
+      {
+        Country: "India",
+        CountryCode: "US",
+        Slug: "united-states",
+        NewConfirmed: 35098,
+        TotalConfirmed: 4562222,
+        NewDeaths: 2104,
+        TotalDeaths: 18581,
+        NewRecovered: 3380,
+        TotalRecovered: 28790,
+        Date: "2020-04-11T11:31:32Z"
+      }
+  ]
+}

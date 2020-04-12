@@ -1,0 +1,92 @@
+.cp{
+  cursor: pointer;
+}
+
+.navbar-header-text{
+  margin: 0;
+  color: #ffffff;
+  text-align: center;
+  font-size: 22px;
+  padding-top: .95rem;
+  padding-bottom: .85rem;
+  font-size: 1rem;
+  background-color: rgba(0, 0, 0, .25);
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
+}
+
+.country{
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  padding: 17px 28px;
+  background-color: #2092ed;
+  margin: 10px 0;
+  color: #fff;
+  cursor: pointer;
+  transition: box-shadow 1s;
+}
+
+.country:hover{
+  box-shadow: 0 13px 11px 0 rgba(0,0,0,0.2);
+}
+
+.highly-affected{
+  margin: 15px 0;
+}
+
+.country-list{
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.top-country-list{
+  text-align: center;
+  line-height: 40px;
+}
+
+.cases{
+  font-size: 15px;
+  padding: 10px 0;
+}
+
+.country-title {
+  border-bottom: 2px solid blue;
+  padding: 2px 0;
+}
+
+.card-data{
+  color: #ffff;
+  background: #000000;
+  box-shadow: 1px 10px 10px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 1px 10px 10px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 1px 10px 10px 0px rgba(0,0,0,0.75);
+  margin: 7px 0;
+  cursor: pointer;
+}
+
+.confirmed{
+  background: #ffc107;
+}
+
+.death{
+  background: #dc3545;
+}
+
+.recover{
+  background: #28a745;
+}
+
+.input-search-box{
+  margin: 10px 0;
+  padding: 0px 15px;
+}
+
+.country-name{
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.total-confirmed{
+  font-weight: 900;
+  color: lightblue;
+}

@@ -1,0 +1,41 @@
+import React from "react";
+import GlobalResult from "./globalResult";
+import {useStateContext} from '../covid-provider'
+
+
+const TopAffectedCountires = () => {
+    const {highlyAffectedCountries} = useStateContext();
+    return (
+        <main role="main" className="col-md-9 ml-sm-auto col-lg-9">
+            <GlobalResult/>
+            <h5 className="top-country-list">Highly Affected Countries</h5>
+            <div className="row highly-affected">
+            {
+                highlyAffectedCountries.map((country, idx)=>{
+                    return(
+                        <div className="col-sm-4" key={idx}>
+                            <div className="card card-data mb-2">
+                                <div>
+                                    <h5 className="card-title text-center m-2 country-title">{country.Country}</h5>
+                                    <div className="card-text text-center confirmed">
+                                        <h5 className="cases">Confirmed - {country.TotalConfirmed}</h5>                                    
+                                    </div>
+                                    <div className="card-text text-center recover">
+                                        <h5 className="cases">Recovered - {country.TotalRecovered}</h5>                                    
+                                    </div>
+                                    <div className="card-text text-center death">
+                                        <h5 className="cases">Death - {country.TotalDeaths}</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    )
+                })
+            }
+            
+            </div>
+        </main>
+    );
+};
+
+export default TopAffectedCountires;
