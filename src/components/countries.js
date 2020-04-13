@@ -1,29 +1,36 @@
 import React, {useState, useEffect, useRef} from 'react';
 import {useStateContext, useDispatchContext} from '../covid-provider'
+import {TEXT_CHANGE} from "../hooks-reducer/actionTypes";
 
 const Countries = () =>{ 
-    let {countries, showSidebar} = useStateContext();    
+    let {countries, showSidebar, inputTextData} = useStateContext();   
+    let dispatch = useDispatchContext(); 
     const [allCountry, setAllCountry] = useState([]);
     const [showSearch, setShowSearch] = useState(true);
-    const textInput = useRef(null);
+    let textInput = useRef(null);
     
 
     useEffect(() => {
         setAllCountry(countries);
       }, [countries]);
 
+    useEffect(()=>{
+        textInput.current.value = inputTextData
+    },[inputTextData])
 
     const search = () => {
-        let value = textInput.current.value
-        if(value){
+        let inputTextData = textInput.current.value
+        if(inputTextData){
             setShowSearch(false);             
-            setAllCountry(countries.filter(country => country.Country.toLowerCase() === value.toLowerCase()));
+            setAllCountry(countries.filter(country => country.Country.toLowerCase() === inputTextData.toLowerCase()));
+            dispatch({type: 'TEXT_CHANGE', payload: inputTextData})
         }       
     }
 
     const clear = () => {    
         setAllCountry(countries)   
         setShowSearch(true);
+        dispatch({type: TEXT_CHANGE, payload: ''})
     }
 
     const LoadComponent = () => {

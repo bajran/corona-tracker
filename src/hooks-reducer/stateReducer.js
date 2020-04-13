@@ -1,10 +1,11 @@
-import {ALL_COUNTRIES, WROST_COUNTRIES, GLOBALLY_AFFECTED, SIDEBAR} from './actionTypes'
+import {ALL_COUNTRIES, WROST_COUNTRIES, GLOBALLY_AFFECTED, SIDEBAR, TEXT_CHANGE} from './actionTypes'
 
 export const initialState = {
     global: {},
     countries: [],
     highlyAffectedCountries: [],
-    showSidebar: false
+    showSidebar: false,
+    textInput: ''
 };
 
 export const reducer = (state, action) => {
@@ -21,6 +22,9 @@ export const reducer = (state, action) => {
         
         case SIDEBAR:
             return {...state, showSidebar: payload}
+
+        case TEXT_CHANGE:
+            return {...state, inputTextData: payload} 
 
         default:
             return state

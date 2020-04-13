@@ -1,4 +1,4 @@
-import React,{useEffect, useState} from "react";
+import React from "react";
 import GlobalResult from "./globalResult";
 import {useStateContext} from '../covid-provider'
 

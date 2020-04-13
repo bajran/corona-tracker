@@ -11,7 +11,6 @@ const Main = () => {
     const dispatch = useDispatchContext();
     const {showSidebar} = useStateContext();
 
-    // const [countries, setCountries] = useState([])
     useEffect(() => {
         getApiCall("summary")
          .then(populationData => {
