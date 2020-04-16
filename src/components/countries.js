@@ -1,6 +1,7 @@
 import React, {useState, useEffect, useRef} from 'react';
 import {useStateContext, useDispatchContext} from '../covid-provider'
 import {TEXT_CHANGE} from "../hooks-reducer/actionTypes";
+import {Link} from 'react-router-dom';
 
 const Countries = () =>{ 
     let {countries, showSidebar, inputTextData} = useStateContext();   
@@ -55,14 +56,16 @@ const Countries = () =>{
                         {
                             allCountry.map((country, idx)=>{
                                 return(
-                                    <div className="country" key={idx}>                                   
-                                        <div className="country-name">         
-                                            {country.Country} 
+                                    <Link to={`graph/${country.Slug}`} className="link" >
+                                        <div className="country" key={idx}>                                   
+                                            <div className="country-name">         
+                                                {country.Country} 
+                                            </div>
+                                            <div className="total-confirmed">         
+                                                Confirmed Case - {country.TotalConfirmed} 
+                                            </div>
                                         </div>
-                                        <div className="total-confirmed">         
-                                            Confirmed Case - {country.TotalConfirmed} 
-                                        </div>
-                                    </div>
+                                    </Link>
                                 )
                             })
                         }

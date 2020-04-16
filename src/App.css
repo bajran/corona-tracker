@@ -51,6 +51,8 @@
 .cases{
   font-size: 15px;
   padding: 10px 0;
+  font-size: x-large;
+  font-family: inherit;
 }
 
 .country-title {
@@ -115,7 +117,64 @@
   
 }
 
+.link{
+  color: #2092ed !important;
+}
 
+.country-info{
+  font-size: 24px;
+  line-height: 28px;
+  margin-bottom: 12px;
+  font-family: unset;
+  font-weight: 900;
+}
+
+.single-country-death{
+  background-color: rgba(255,79,79,.2);
+}
+
+.single-country-death h5{
+   color: #ff4f4f;
+}
+
+
+.single-country-recovered{
+  background-color: rgba(0,189,133,.2);
+}
+.single-country-recovered h5{
+  color: #00bd85;
+}
+
+.single-country-confirmed{
+    background-color: rgba(37,127,249,.2);
+}
+
+.highly-affected-data{
+  -webkit-transition: all .2s ease-in;
+  -moz-transition: all .2s ease-in;
+  -ms-transition: all .2s ease-in;
+  -o-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+}
+
+.highly-affected-data:hover{
+  -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+     transform: scale(1.1);
+}
+
+.single-country-confirmed h5{
+  color: #257ff9;;
+}
+
+.single-country-name{
+  text-align: center;
+  margin: 20px;
+  font-weight: 700;
+  font-size: 32px;
+}
 
 /* Responsive Designing */
 
