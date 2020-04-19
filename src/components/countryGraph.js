@@ -1,11 +1,12 @@
-import React,{useEffect, useState} from 'react';
+import React,{useEffect, useState, Suspense} from 'react';
 import {useParams} from 'react-router-dom';
 import getApiCall from '../api/api_trigger';
 import CountryInfo from './countryInfo';
 import * as moment from 'moment';
-// import Highcharts from 'highcharts';
+import DarkUnica from 'highcharts/themes/dark-unica';
 import Highcharts from 'highcharts/highstock';
 import HighchartsReact from 'highcharts-react-official';
+import NavigationMenu from './navigation';
 
 const CountryGraph =() => {
     const {country} = useParams();
@@ -13,7 +14,7 @@ const CountryGraph =() => {
     const [recoveredCases, setRecoveredCases] = useState([]);
     const [deathCases, setDeathCases] = useState([]);
     const [dates, setDates] = useState([]);
-    const [totalData, setTotalData] = useState([]) 
+    const [totalData, setTotalData] = useState([])
 
     useEffect(()=>{
         getApiCall(`total/dayone/country/${country}`)
@@ -22,16 +23,17 @@ const CountryGraph =() => {
                 confirmedData = [],
                 recoveredData = [],
                 deathData = [];
-                cases.map((confCase)=>{
+            let totalRecord = cases.length - 35;
+                cases.map((confCase) => {
                     allDate.push(moment(confCase.Date).format('ll'));
                     confirmedData.push(confCase.Confirmed);
                     recoveredData.push(confCase.Recovered);
                     deathData.push(confCase.Deaths)
-                })
-            setConfirmedCases(confirmedData);
-            setRecoveredCases(recoveredData);
-            setDeathCases(deathData);
-            setDates(allDate);
+                });
+            setConfirmedCases(confirmedData.splice(totalRecord, confirmedData.length));
+            setRecoveredCases(recoveredData.splice(totalRecord, recoveredData.length));
+            setDeathCases(deathData.splice(totalRecord, deathData.length));
+            setDates(allDate.splice(totalRecord, allDate.length));
             setTotalData(cases[cases.length-1]);
           })
           .catch(() =>
@@ -43,26 +45,10 @@ const CountryGraph =() => {
 
     const options = {
         title: {
-            text: 'Affected Data'
+            text: 'Last 25 Days Record'
           },
           xAxis: {
-            categories: dates,
-            min: 0,
-            max: 50,
-            scrollbar: {
-                enabled: true,
-                barBackgroundColor: 'gray',
-                barBorderRadius: 7,
-                barBorderWidth: 0,
-                buttonBackgroundColor: 'gray',
-                buttonBorderWidth: 0,
-                buttonBorderRadius: 7,
-                trackBackgroundColor: 'none',
-                trackBorderWidth: 1,
-                trackBorderRadius: 8,
-                trackBorderColor: '#CCC'
-            },
-            tickLength: 0
+            categories: dates
         },    
         yAxis: {
             title: {
@@ -72,14 +58,7 @@ const CountryGraph =() => {
             max: 1000000,
             lineColor: '#F33'
         },   
-        plotOptions: {
-            series: {
-                showInNavigator: true
-            }
-        },
-        rangeSelector: {
-            selected: 4
-        },
+       
         series: [
             {
                 name: 'Confirmed',
@@ -99,14 +78,25 @@ const CountryGraph =() => {
             }
         ]
     }
-    console.log(dates)
     return (
         <div>
-            <CountryInfo totalData = {totalData}/>
-            <HighchartsReact
-                highcharts={Highcharts}
-                options={options}
-            />
+            <NavigationMenu/>
+            {
+                totalData.length !== 0 ? 
+                    (
+                        <div className="full-country-info">
+                            <CountryInfo totalData = {totalData}/>
+                            <div className="highcharts-data">
+                                <HighchartsReact
+                                    highcharts={Highcharts}
+                                    options={options}
+                                    theme = {DarkUnica}
+                                />
+                            </div>
+                        </div>
+                    ):  (<div class="loader">Loading...</div>) 
+            }
+          
         </div>
     )
 }

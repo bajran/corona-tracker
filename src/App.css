@@ -1,21 +1,30 @@
-[role=main]{
-  padding-top: 78px !important;
-}
-
-.cp{
-  cursor: pointer;
+.navbar-bg-black{
+  background-color: #343a40!important;
 }
 
 .navbar-header-text{
-  margin: 0;
-  color: #ffffff;
-  text-align: center;
-  font-size: 22px;
-  padding-top: .95rem;
-  padding-bottom: .85rem;
-  font-size: 1rem;
-  background-color: rgba(0, 0, 0, .25);
-  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
+  color: #fff;
+  font-size: 18px;
+}
+
+.navbar-toggler-icon{
+  background-color: cornsilk;
+}
+
+.main-nav{
+  font-size: 21px;
+}
+
+[role=main]{
+  padding-top: 14px !important;
+}
+
+/* .container-fluid{
+  margin-top: 62px;
+} */
+
+.cp{
+  cursor: pointer;
 }
 
 .country{
@@ -97,29 +106,15 @@
   color: lightblue;
 }
 
-.navbar-toggler{
-  position: absolute;
-  top: 0;
-  left: 0;
-  outline: none;
-  z-index: 1;
-  height: 100%;
-  border: 0
-}
-
-.navbar-toggler:focus{
-  border: 0;
-  outline: none;
-}
 
 .full-width-sidebar{
-  width: 100%;  
-  
+  width: 100%;
 }
 
 .link{
-  color: #2092ed !important;
+  color: transparent !important;
 }
+
 
 .country-info{
   font-size: 24px;
@@ -176,17 +171,186 @@
   font-size: 32px;
 }
 
-/* Responsive Designing */
-
-@media (max-width: 768px) {
-  .show-sidebar{
-    display: none;
-  }
-
+.no-record{
+  text-align: center;
+  display: block;
+  font-size: 20px;
+  font-weight: 300;
 }
 
-@media (min-width: 769px){
-  .navbar-toggler{
-    display: none;
+.entered-string{
+  font-weight: 500;
+}
+
+.whole-page-consider{
+  opacity: 0.3;
+}
+
+.full-country-info{
+  margin-top: 67px;
+}
+
+.about-info{
+  padding-top: 20px;
+  text-align: center;
+}
+
+.about-container{
+  background-color: #445175;
+  border-radius: 22px;
+}
+
+.about-jumbo{
+  margin-bottom: 0px !important;
+  border-radius: 46px;
+  padding-top: 10px;
+  padding-bottom: 1px
+}
+
+.about-heading{
+  font-size: 23px;
+}
+
+.bbc-image{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.corna-precaution{
+  margin-top: 37px;
+  text-align: center;
+ 
+}
+.corna-title{
+  font-size: 20px;
+}
+
+.card-precautions-body{
+  background-color: rgba(0,189,133,.2);
+  color: #00bd85;
+  font-weight: 800;
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -ms-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.card-precautions-body:hover{
+    -webkit-box-shadow:  -4px 1px 7px -3px rgba(0,0,0,0.75);
+    -moz-box-shadow:  -4px 1px 7px -3px rgba(0,0,0,0.75);
+    box-shadow: -4px 1px 7px -3px rgba(0,0,0,0.75);
+}
+
+/* Spinner */
+.loader,
+.loader:before,
+.loader:after {
+  background: #8080c0;;
+  -webkit-animation: load1 1s infinite ease-in-out;
+  animation: load1 1s infinite ease-in-out;
+  width: 1em;
+  height: 4em;
+}
+.loader {
+  color: #8080c0;;
+  text-indent: -9999em;
+  position: relative;
+  font-size: 11px;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 999;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+.loader:before,
+.loader:after {
+  position: absolute;
+  top: 0;
+  content: '';
+}
+.loader:before {
+  left: -1.5em;
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+.loader:after {
+  left: 1.5em;
+}
+@-webkit-keyframes load1 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 0;
+    height: 4em;
+  }
+  40% {
+    box-shadow: 0 -2em;
+    height: 5em;
   }
 }
+@keyframes load1 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 0;
+    height: 4em;
+  }
+  40% {
+    box-shadow: 0 -2em;
+    height: 5em;
+  }  
+}
+  
+  /* Responsive Designing */
+  
+  @media (max-width: 768px) {
+    .show-sidebar{
+      display: none;
+    }
+  
+    .single-country-name{
+      font-size: 28px;
+    }
+
+    .extra-info{
+      display: none;
+    }
+
+    .center-content{
+      display: contents;
+    }
+    .navbar-nav{
+      margin-top: 14px;
+    }
+  }
+  
+  @media (min-width: 769px){
+    .highcharts-data{
+      width: 70%;
+      margin: 0 auto;
+    }
+    .extra-info{
+      display: flex;
+    }
+    .precaution{
+      margin-right: 27px;
+    }
+    .about-precaution{
+      display: none;
+    }
+    .side-space{
+      margin-left: 30px;
+    }
+
+    .show-search{
+      display: none;
+    }
+  }

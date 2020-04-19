@@ -4,6 +4,8 @@ import "./App.css";
 import Main from "./components/Main";
 import {CovidProvider} from './covid-provider'
 import CountryGraph from "./components/countryGraph";
+import Precaution from "./components/precaution";
+import About from "./components/about";
 
 function App() { 
   return (    
@@ -15,6 +17,12 @@ function App() {
         </Route>
         <Route path='/graph/:country'>
           <CountryGraph/>
+        </Route>
+        <Route path='/precaution'>
+          <Precaution/>
+        </Route>
+        <Route path = '/about'>
+          <About/>
         </Route>
       </Switch>
     </Router>

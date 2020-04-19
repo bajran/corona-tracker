@@ -5,7 +5,7 @@ export const initialState = {
     countries: [],
     highlyAffectedCountries: [],
     showSidebar: false,
-    textInput: ''
+    inputTextData: '',
 };
 
 export const reducer = (state, action) => {

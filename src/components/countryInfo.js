@@ -52,7 +52,7 @@ const CountryInfo = ({totalData}) =>{
                     <div>
                         <h5 className="card-title text-center m-2 country-info">Recovered Ratio</h5>
                         <div className="card-text text-center ">
-                            <h5 className="cases">{((Recovered * 100)/ Confirmed).toFixed(2)}</h5>                                    
+                            <h5 className="cases">{((Recovered * 100)/ Confirmed).toFixed(2)}%</h5>                                    
                         </div>                        
                     </div>
                 </div>
@@ -64,7 +64,7 @@ const CountryInfo = ({totalData}) =>{
                     <div>
                         <h5 className="card-title text-center m-2 country-info">Death Ratio</h5>
                         <div className="card-text text-center ">
-                            <h5 className="cases">{((Deaths * 100)/ Confirmed).toFixed(2)}</h5>                                    
+                            <h5 className="cases">{((Deaths * 100)/ Confirmed).toFixed(2)}%</h5>                                    
                         </div>                        
                     </div>
                 </div>
