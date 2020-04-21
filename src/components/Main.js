@@ -10,12 +10,12 @@ import NavigationMenu from "./navigation";
 
 const Main = () => {
     const dispatch = useDispatchContext();
-    const {showSidebar} = useStateContext();
+    const {highlyAffectedCountries = []} = useStateContext();
 
     useEffect(() => {
+        dispatch({ type: SIDEBAR, payload: false });
         getApiCall("summary")
          .then(populationData => {
-            console.log(populationData);
             const { Global = {}, Countries = [], Date } = populationData;
             let countries = Countries.sort((a, b) => b.TotalConfirmed - a.TotalConfirmed )
             let global = Global       
@@ -27,6 +27,7 @@ const Main = () => {
             console.log("Something is not working, Please retry after some time")
           );
         
+
         // Fake Data - TO Reduce API Call
         // let {Countries} = Country;
         // let {Global} = GlobalData;
@@ -44,8 +45,12 @@ const Main = () => {
       <NavigationMenu/>
       <div className="container-fluid">
         <div className="row">
-          <Countries/>
-          <TopAffectedCountires/>
+        {highlyAffectedCountries.length !== 0 ?
+          <>
+            <Countries/>
+            <TopAffectedCountires/>
+          </> :  <div className="loader">Loading...</div>
+        }
         </div>
       </div>
     </div>

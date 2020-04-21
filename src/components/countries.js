@@ -8,8 +8,8 @@ const Countries = () => {
   let dispatch = useDispatchContext();
   const [allCountry, setAllCountry] = useState([]);
   const [showSearch, setShowSearch] = useState(true);
-  let textInput = useRef(null);
-
+  let textInput = useRef(inputTextData);
+  
   useEffect(() => {
     setAllCountry(countries);
   }, [countries]);

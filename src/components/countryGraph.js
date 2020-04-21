@@ -1,4 +1,4 @@
-import React,{useEffect, useState, Suspense} from 'react';
+import React,{useEffect, useState} from 'react';
 import {useParams} from 'react-router-dom';
 import getApiCall from '../api/api_trigger';
 import CountryInfo from './countryInfo';
@@ -7,6 +7,10 @@ import DarkUnica from 'highcharts/themes/dark-unica';
 import Highcharts from 'highcharts/highstock';
 import HighchartsReact from 'highcharts-react-official';
 import NavigationMenu from './navigation';
+import { useDispatchContext } from "../covid-provider";
+import { SIDEBAR } from "../hooks-reducer/actionTypes";
+import Countries from './countries';
+
 
 const CountryGraph =() => {
     const {country} = useParams();
@@ -15,8 +19,10 @@ const CountryGraph =() => {
     const [deathCases, setDeathCases] = useState([]);
     const [dates, setDates] = useState([]);
     const [totalData, setTotalData] = useState([])
+    const dispatch = useDispatchContext();
 
     useEffect(()=>{
+        dispatch({ type: SIDEBAR, payload: false });
         getApiCall(`total/dayone/country/${country}`)
          .then(cases => {
             let allDate = [],
@@ -41,7 +47,7 @@ const CountryGraph =() => {
           );
 
         
-    },[country]);
+    },[country, dispatch]);
 
     const options = {
         title: {
@@ -80,7 +86,10 @@ const CountryGraph =() => {
     }
     return (
         <div>
-            <NavigationMenu/>
+            <NavigationMenu showSearchIcon = { false }/>
+            <div className="about-precaution">
+                <Countries/>
+           </div>
             {
                 totalData.length !== 0 ? 
                     (

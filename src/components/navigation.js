@@ -5,14 +5,14 @@ import { Link } from "react-router-dom";
 import { Collapse, Navbar, NavbarToggler, Nav, NavItem } from "reactstrap";
 import { FaSearch } from "react-icons/fa";
 
-const NavigationMenu = () => {
+const NavigationMenu = ({showSearchIcon = true}) => {
   const [isOpen, setIsOpen] = useState(false);
   const dispatch = useDispatchContext();
   const { showSidebar } = useStateContext();
 
   const toggle = () => {
+    dispatch({ type: SIDEBAR, payload: false });
     setIsOpen(!isOpen);
-    if (showSidebar) dispatch({ type: SIDEBAR, payload: !showSidebar });
   };
   const setSidebar = () => {
     if(isOpen){
@@ -23,14 +23,16 @@ const NavigationMenu = () => {
 
   return (
     <Navbar expand="md" light className="navbar-bg-black">
-      <span onClick={setSidebar} className="cp navbar-header-text show-search">
-        <FaSearch size={23} />
-      </span>
+      { showSearchIcon ?
+        <span onClick={setSidebar} className="cp navbar-header-text show-search">
+          <FaSearch size={23} />
+        </span> : <span className="cp navbar-header-text show-search"></span>
+      }
       <Link to="/" className="link">
-        <h6 className="main-nav navbar-header-text">GO-Corona</h6>
+        <h6 className="main-nav navbar-header-text">GO-Corona<sup className="beta-version">Beta</sup></h6>
       </Link>
       <NavbarToggler onClick={toggle} />
-      <Collapse isOpen={isOpen} navbar>
+      <Collapse isOpen={isOpen} navbar className="show-right-end">
         <Nav className="mr-auto" navbar>
           <NavItem className="side-space">
             <Link to="/precaution" className="link">

@@ -8,9 +8,7 @@ const TopAffectedCountires = () => {
     const {highlyAffectedCountries = []} = useStateContext();
     
     return (
-        <>
-        {highlyAffectedCountries.length !== 0 ?
-            (<main role="main" className={`ml-sm-auto ${ window.screen.width <= 768 ? 'col-md-12' : 'col-md-9' }`}>
+        <main role="main" className={`ml-sm-auto ${ window.screen.width <= 768 ? 'col-md-12' : 'col-md-9' }`}>
                 <GlobalResult/>
                 <h5 className="top-country-list">Highly Affected Countries</h5>
                 <div className="row highly-affected">
@@ -40,9 +38,7 @@ const TopAffectedCountires = () => {
                 }
                 
                 </div>
-            </main>) : <div className="loader">Loading...</div>
-        }
-        </>
+            </main>
     );
 };
 

@@ -7,12 +7,21 @@
   font-size: 18px;
 }
 
+.navbar-toggler{
+  outline: none !important;
+}
+
 .navbar-toggler-icon{
   background-color: cornsilk;
 }
 
 .main-nav{
-  font-size: 21px;
+  font-size: 24px;
+}
+
+.beta-version{
+  font-size: 13px;
+  margin-left: 4px;
 }
 
 [role=main]{
@@ -186,9 +195,9 @@
   opacity: 0.3;
 }
 
-.full-country-info{
+/* .full-country-info{
   margin-top: 67px;
-}
+} */
 
 .about-info{
   padding-top: 20px;
@@ -230,18 +239,12 @@
   background-color: rgba(0,189,133,.2);
   color: #00bd85;
   font-weight: 800;
-  -webkit-transition: all .2s ease-in-out;
-  -moz-transition: all .2s ease-in-out;
-  -ms-transition: all .2s ease-in-out;
-  -o-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+  -webkit-box-shadow:  -4px 1px 7px -3px rgba(0,0,0,0.75);
+  -moz-box-shadow:  -4px 1px 7px -3px rgba(0,0,0,0.75);
+  box-shadow: -4px 1px 7px -3px rgba(0,0,0,0.75);
+  margin: 10px 0;
 }
 
-.card-precautions-body:hover{
-    -webkit-box-shadow:  -4px 1px 7px -3px rgba(0,0,0,0.75);
-    -moz-box-shadow:  -4px 1px 7px -3px rgba(0,0,0,0.75);
-    box-shadow: -4px 1px 7px -3px rgba(0,0,0,0.75);
-}
 
 /* Spinner */
 .loader,
@@ -330,6 +333,12 @@
     .navbar-nav{
       margin-top: 14px;
     }
+    .precaution-heading{
+      font-size: 16px;
+      overflow-wrap: break-word;
+      text-align: center;
+      margin-bottom: 19px;
+    }
   }
   
   @media (min-width: 769px){
@@ -352,5 +361,18 @@
 
     .show-search{
       display: none;
+    }
+
+    .precaution-heading{
+      font-size: 22px;
+      overflow-wrap: break-word;
+      text-align: center;
+      margin-bottom: 18px;
+    }
+
+    .show-right-end{
+      position: absolute;
+      right: 0;
+      margin-right: 15px;
     }
   }

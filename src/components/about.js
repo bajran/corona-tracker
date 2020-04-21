@@ -13,19 +13,19 @@ const About = () => {
            </div>
            <div className="container-fluid">
             <div className="about-info">
-           <div class="container about-container">
-                <div class="jumbotron about-jumbo">
+           <div className="container about-container">
+                <div className="jumbotron about-jumbo">
                     <h1 className="about-heading"><FaAddressCard size={23} style={{marginRight:'10px'}}/> About</h1>
                 </div>
-                <div class="jumbotron about-jumbo">
+                <div className="jumbotron about-jumbo">
                     <h3 className="about-heading"><FaQuestion size={23} style={{marginRight:'10px'}}/>Reason to make this website</h3>
-                    <p class="lead">
+                    <p className="lead">
                         To show the global information about covid-19
                     </p>
                 </div>
-                <div class="jumbotron about-jumbo">
+                <div className="jumbotron about-jumbo">
                     <h3 className="about-heading"><FaUsers size={23} style={{marginRight:'10px'}}/>Collaboration</h3>
-                    <p class="lead">
+                    <p className="lead">
                         If you have cool ideas and wanna add it to the website, then please send me mail
                         <span> stop.coronas@gmail.com</span>
                         {/* <a href="https://www.linkedin.com/in/akshay-biyani-478b8aaa/">linkedin</a>  */}
@@ -35,9 +35,9 @@ const About = () => {
                         <a href="https://www.linkedin.com/in/akshay-biyani-478b8aaa/"> linkedin</a> 
                     </p>
                 </div>
-                <div class="jumbotron about-jumbo">
+                <div className="jumbotron about-jumbo">
                     <h3 className="about-heading"><FaDatabase size={23} style={{marginRight:'10px'}}/>Sources</h3>
-                    <p class="lead">
+                    <p className="lead">
                         All data is taken from
                         <h5><a href="https://covid19api.com/">Covid-19</a></h5>
                         <h5><a href="https://github.com/CSSEGISandData/COVID-19">Johns Hopkins CSSE</a></h5> 
